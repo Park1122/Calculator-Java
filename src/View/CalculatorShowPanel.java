@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class CalculatorShowPanel extends JPanel {
 
-    private JTextPane textPane;
+    private final JTextPane textPane;
 
     public CalculatorShowPanel() {
         this.setLayout(new BorderLayout());
@@ -20,7 +20,15 @@ public class CalculatorShowPanel extends JPanel {
         StyleConstants.setAlignment(right, StyleConstants.ALIGN_RIGHT);
         doc.setParagraphAttributes(0, doc.getLength(), right, false);
 
-        this.textPane.setFont(new Font("Serif", Font.PLAIN, 20));
+        this.textPane.setFont(new Font("Serif", Font.PLAIN, 30));
         this.add(this.textPane,BorderLayout.CENTER);
+    }
+
+    public JTextPane getTextPane() {
+        return textPane;
+    }
+
+    public void initialize() {
+        this.textPane.setText("0");
     }
 }
