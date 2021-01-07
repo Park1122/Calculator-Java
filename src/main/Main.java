@@ -1,11 +1,13 @@
 package main;
 
-import View.CalculatorFrame;
+import logic.CalculatorLogic;
+import view.CalculatorFrame;
 
 public class Main {
 
     public static void main(String[] args) {
-        CalculatorFrame calculatorFrame = new CalculatorFrame();
+        CalculatorLogic calculatorLogic = new CalculatorLogic();
+        CalculatorFrame calculatorFrame = new CalculatorFrame(calculatorLogic);
         calculatorFrame.setVisible(true);
         calculatorFrame.initialize();
     }
